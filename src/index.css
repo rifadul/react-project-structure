@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import '@fontsource/montserrat';
-@import './base.css';
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+@import './styles/base.css';
 
 @theme {
     --font-manrope: 'Montserrat', sans-serif;
