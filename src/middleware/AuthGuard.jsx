@@ -2,6 +2,10 @@
 import { Navigate, useLocation, useOutlet } from 'react-router';
 import routePaths from '../constants/routePaths.constant';
 import { isAuthenticated } from '../constants/app.constant';
+import { extractMenuPaths } from '../utils/extractMenuPaths';
+import { navigationMenus } from '../app/navigation/navigationMenus';
+import Error404 from '../app/pages/errors/404';
+import { restrictRouteAccess } from '../utils/restrictRouteAccess';
 
 // Local Imports
 
@@ -10,6 +14,7 @@ import { isAuthenticated } from '../constants/app.constant';
 export default function AuthGuard() {
     const outlet = useOutlet();
     const location = useLocation();
+    const allRoutes = extractMenuPaths(navigationMenus);
 
     if (!isAuthenticated) {
         return (
@@ -20,5 +25,13 @@ export default function AuthGuard() {
         );
     }
 
-    return <>{outlet}</>;
+    // If current path is NOT in allowed paths, redirect or show "Unauthorized"
+    if (restrictRouteAccess(location.pathname, allRoutes)) {
+        return <>{outlet}</>;
+    } else if (location.pathname === routePaths.ROUTE_HOME) {
+        // If authenticated and authorized, render the outlet
+        return <Navigate to={routePaths.ROUTE_DASHBOARD} />;
+    } else {
+        return <Error404 />;
+    }
 }

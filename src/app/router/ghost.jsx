@@ -1,6 +1,5 @@
 import routePaths from '../../constants/routePaths.constant';
 import GhostGuard from '../../middleware/GhostGuard';
-// import GhostGuard from 'middleware/GhostGuard';
 
 const ghostRoutes = {
     id: 'ghost',

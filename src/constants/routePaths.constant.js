@@ -1,3 +1,5 @@
+import { joinPaths } from "../utils/joinPaths";
+
 // Redirect Paths
 const REDIRECT_URL_KEY = "redirect";
 
@@ -5,7 +7,9 @@ const REDIRECT_URL_KEY = "redirect";
 const ROUTE_GHOST_ENTRY_PATH = "/login";
 
 // Protected Routes
-const ROUTE_MY_PROFILE = "/my-profile";
+const ROUTE_DASHBOARD = "/dashboard";
+const ROOT_PROFILE = "/profile";
+const ROUTE_MY_PROFILE = joinPaths(ROOT_PROFILE, "/my-profile");
 
 // Public Routes
 const ROUTE_HOME = "/";
@@ -22,6 +26,8 @@ const routePaths = {
 
     // Protected Routes
     ROUTE_MY_PROFILE,
+    ROOT_PROFILE,
+    ROUTE_DASHBOARD,
 
     // Public Routes
     ROUTE_HOME,
