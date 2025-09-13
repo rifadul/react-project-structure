@@ -55,38 +55,4 @@ export const navigationMenus = [
             },
         ],
     },
-]
-// export const navigationMenus = [
-//     {
-//         id: routePaths.ROUTE_DASHBOARD,
-//         path: routePaths.ROUTE_DASHBOARD,
-//         type: NAV_TYPE.ITEM,
-//         title: "Dashboard",
-//         transKey: "nav.dashboards.dashboard",
-//         Icon: FiHome,
-//         lazy: async () => ({
-//             Component: (await import('../pages/dashboard')).default,
-//         }),
-//         permissions: [
-//             PERMISSIONS.ALL
-//         ],
-//     },
-//     {
-//         id: routePaths.ROUTE_MY_PROFILE,
-//         path: routePaths.ROUTE_MY_PROFILE,
-//         type: NAV_TYPE.ITEM,
-//         title: "My Profile",
-//         transKey: "nav.dashboards.myProfile",
-//         Icon: FiHome,
-//         lazy: async () => ({
-//             Component: (await import('../pages/my-profile')).default,
-//         }),
-//         child: [
-//             { id: 'profile-overview', title: 'Overview', path: `${routePaths.ROUTE_MY_PROFILE}/:id`, lazy: async () => ({ Component: (await import("../pages/my-profile")).default }), permissions: [PERMISSIONS.ALL] },
-//             { id: 'profile-settings', title: 'Settings', path: `/settings`, lazy: async () => ({ Component: (await import("../pages/my-profile")).default }), permissions: [PERMISSIONS.ALL] },
-//         ],
-//         permissions: [
-//             PERMISSIONS.ALL
-//         ],
-//     },
-// ]
+];
